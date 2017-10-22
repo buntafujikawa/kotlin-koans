@@ -9,10 +9,11 @@ fun example() {
 
 val Customer.orderedProducts: Set<Product> get() {
     // Return all products this customer has ordered
-    todoCollectionTask()
+    // flatMapは2次元リストをフラット(1次元)リストに変換する
+    return orders.flatMap { it.products }.toSet()
 }
 
 val Shop.allOrderedProducts: Set<Product> get() {
     // Return all products that were ordered by at least one customer
-    todoCollectionTask()
+    return customers.flatMap { it.orderedProducts }.toSet()
 }

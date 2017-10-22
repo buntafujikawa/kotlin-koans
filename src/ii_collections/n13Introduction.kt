@@ -1,5 +1,8 @@
 package ii_collections
 
+// この章はこちらを参考に進める
+// https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html
+
 import java.util.*
 
 /*
@@ -18,7 +21,7 @@ fun example0(list: List<Int>) {
 
 fun Shop.getSetOfCustomers(): Set<Customer> {
     // Return a set containing all the customers of this shop
-    todoCollectionTask()
+    return customers.toSet()
 //    return this.customers
 }
 
