@@ -2,8 +2,18 @@ package iv_properties
 
 import util.TODO
 
+// https://dogwood008.github.io/kotlin-web-site-ja/docs/reference/delegated-properties.html
 class LazyProperty(val initializer: () -> Int) {
-    val lazy: Int = todoTask33()
+    private val lazyValue : Int ? = null
+        get() {
+            if (field == null) {
+                field = initializer()
+            }
+            return field
+        }
+
+    val lazy: Int
+        get() = lazyValue!!
 }
 
 fun todoTask33(): Nothing = TODO(

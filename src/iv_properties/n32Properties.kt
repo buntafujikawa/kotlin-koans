@@ -3,9 +3,15 @@ package iv_properties
 import util.TODO
 import util.doc32
 
+// https://kotlinlang.org/docs/reference/properties.html
+
 class PropertyExample() {
     var counter = 0
-    var propertyWithCounter: Int? = todoTask32()
+    var propertyWithCounter: Int? = null
+        set(arg:Int?) {
+            field = arg
+            counter++
+        }
 }
 
 fun todoTask32(): Nothing = TODO(
